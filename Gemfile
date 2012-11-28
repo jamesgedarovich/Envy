@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-source 'http://uaz-kf-a09.mosaic.arizona.edu/geminabox/'
+#source 'http://uaz-kf-a09.mosaic.arizona.edu/geminabox/'
 
 gem 'rails', '3.2.2'
 

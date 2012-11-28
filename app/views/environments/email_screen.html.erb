@@ -30,6 +30,8 @@
               <a href="<%= screenshot.image.url %>"><%= screenshot_tag screenshot %></a>
             <% end %>
           <% elsif screenshot %>
+	    <%= installed =%>
+	    <br />
             <%= screenshot_tag screenshot %>
           <% else %>
             <%= installed %>

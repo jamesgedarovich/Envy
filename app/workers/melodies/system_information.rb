@@ -1,10 +1,17 @@
+#require 'melodie'
+
 module Melodies
   class SystemInformation
     @queue = :melodies_queue
 
     def self.perform(environment_id)
       environment = Environment.find(environment_id)
-      statistics = Melodie.parse(environment.code)
+#      statistics = Melodie.parse(environment.code)
+	puts environment.code
+	puts environment.url
+
+      statistics = Melodie.parse(environment.url + '/monitoring')
+
       if (statistics.is_a? Melodie::Statistics)
         statistics = {environment.code => statistics}
       end

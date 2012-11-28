@@ -28,8 +28,10 @@ class Envy::WebDriver
   end
 
   def build_number
-    @driver.find_element(:id, 'build').text =~ /(\d.*) \(Oracle9i\)/
-    $1
+    #@driver.find_element(:id, 'build').text =~ /(\d.*) \(oracle9i\)/
+    thetext=@driver.find_element(:css, 'a.portal_link').text# =~ /(\d.*) \(oracle9i\)/
+    #$1
+	thetext
   end
 
   # Navigate to an environment. `code` should be the code defined for an application in the
@@ -62,7 +64,8 @@ class Envy::WebDriver
   end
 
   def screenshot_build_number(file_name='build.png')
-    build = @driver.find_element(:id, 'build')
+    #build = @driver.find_element(:id, 'build')
+	build = @driver.find_element(:css, 'a.portal_link')
     screenshot_element(build, file_name, [5, 5, 8])
   end
 

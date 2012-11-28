@@ -13,7 +13,7 @@ module Envestigators
       Envy.driver.load(environment.code, environment.url)
       build_number = Envy.driver.build_number
       Envy.driver.screenshot_build_number(screenshot_file_name)
-
+	puts build_number
       PrivatePub.publish_to(EnvestigateNew,
                            {:env => environment.code.gsub(/ /, '-'),
                             :envestigation => 'build-number',
